@@ -2,7 +2,7 @@
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { TEMPLATE } from "@/dashboard/_component/TemplateListSection";
-import { Button } from "@/ui/button";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -25,7 +25,11 @@ const FormSection = ({ selectedTemplate, useFormInput }: PROPS) => {
   return (
     <div className="p-5 shadow-md border rounded-lg bg-white">
       {/* @ts-ignore */}
-      <Image src={selectedTemplate?.icon} alt="icon" height={70} width={60} />
+
+      {selectedTemplate?.icon ? (
+        <Image src={selectedTemplate?.icon} alt="icon" height={70} width={60} />
+      ) : null}
+
       <h2 className="font-bold text-2xl mb-2 text-primary">
         {selectedTemplate?.name}
       </h2>
@@ -45,6 +49,7 @@ const FormSection = ({ selectedTemplate, useFormInput }: PROPS) => {
                 name={item.name}
                 required={item?.required}
                 onChange={handleInputChange}
+                className="min-h-[100px]"
               />
             ) : null}
           </div>

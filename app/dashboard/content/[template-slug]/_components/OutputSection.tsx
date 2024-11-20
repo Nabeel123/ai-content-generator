@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import "@toast-ui/editor/dist/toastui-editor.css";
 
 import { Editor } from "@toast-ui/react-editor";
-import { Button } from "@/ui/button";
+import { Button } from "@/components/ui/button";
 import { Copy } from "lucide-react";
 
 function OutputSection() {
@@ -21,7 +21,7 @@ function OutputSection() {
         initialValue="Your result will appear here"
         initialEditType="wysiwyg"
         useCommandShortcut={true}
-        height="600px"
+        height="470px"
         onChange={() => editorRef.current.getInstance().getMarkdown()}
       />
     </div>
