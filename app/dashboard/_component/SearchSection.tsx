@@ -1,7 +1,7 @@
 import { Search } from "lucide-react";
 import React from "react";
 
-function SearchSection() {
+function SearchSection({ onSearchInput }: any) {
   return (
     <div className="p-10 bg-gradient-to-br from-purple-500 via-purple-700 to-blue-500 flex justify-center flex-col items-center">
       <h2 className=" text-white text-3xl font-bold">Browse all Templates</h2>
@@ -13,6 +13,7 @@ function SearchSection() {
             type="text"
             className="bg-transparent text-black outline-none w-full"
             placeholder="Search"
+            onChange={(event) => onSearchInput(event.target.value)}
           />
         </div>
       </div>
