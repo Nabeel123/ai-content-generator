@@ -5,13 +5,15 @@ import { TEMPLATE } from "@/dashboard/_component/TemplateListSection";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React, { useState } from "react";
+import { LoaderIcon } from "lucide-react";
 
 interface PROPS {
   selectedTemplate?: TEMPLATE;
   useFormInput: any;
+  loading: boolean;
 }
 
-const FormSection = ({ selectedTemplate, useFormInput }: PROPS) => {
+const FormSection = ({ selectedTemplate, useFormInput, loading }: PROPS) => {
   const [formData, setFormData] = useState<any>();
 
   const handleInputChange = (event: any) => {
@@ -54,7 +56,8 @@ const FormSection = ({ selectedTemplate, useFormInput }: PROPS) => {
             ) : null}
           </div>
         ))}
-        <Button type="submit" className="w-full py-6 ">
+        <Button disabled={loading} type="submit" className="w-full py-6 ">
+          {loading && <LoaderIcon className="animate-spin" />}
           Generate Content
         </Button>
       </form>

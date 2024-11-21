@@ -4,6 +4,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import React from "react";
+import UsageTrack from "./UsageTrack";
 
 const SideNav = () => {
   const menuList = [
@@ -42,7 +43,7 @@ const SideNav = () => {
           <div key={index}>
             <Link href={menu.path}>
               <div
-                className={`flex gap-2 mb-2 p-3 hover:bg-purple-600 hover:text-white rounded-lg hover:cursor-pointer transition ease-in-out ${
+                className={`flex relative gap-2 mb-2 p-3 hover:bg-purple-600 hover:text-white rounded-lg hover:cursor-pointer transition ease-in-out ${
                   path.startsWith(menu.path) && "bg-purple-600 text-white"
                 }`}
               >
@@ -52,6 +53,9 @@ const SideNav = () => {
             </Link>
           </div>
         ))}
+      </div>
+      <div className="absolute bottom-10 left-0 w-full">
+        <UsageTrack />
       </div>
     </div>
   );
