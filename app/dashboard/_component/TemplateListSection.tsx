@@ -2,12 +2,6 @@ import React, { useEffect, useState } from "react";
 import Templates from "@/(data)/Templates";
 import TemplateCard from "./TemplateCard";
 
-export interface FORM {
-  label: string;
-  field: string;
-  name: string;
-  required?: boolean;
-}
 export interface TEMPLATE {
   name: string;
   desc: string;
@@ -18,8 +12,15 @@ export interface TEMPLATE {
   form?: FORM[];
 }
 
+export interface FORM {
+  label: string;
+  field: string;
+  name: string;
+  required?: boolean;
+}
+
 function TemplateListSection({ userSearchInput }: any) {
-  const [templateList, setTemplateList] = useState<any>(Templates);
+  const [templateList, setTemplateList] = useState(Templates);
   useEffect(() => {
     if (userSearchInput) {
       const filterData = Templates.filter((item) =>
@@ -34,9 +35,7 @@ function TemplateListSection({ userSearchInput }: any) {
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-10">
       {templateList.map((item: TEMPLATE, index: number) => (
-        <div key={index}>
-          <TemplateCard {...item} />
-        </div>
+        <TemplateCard key={index} {...item} />
       ))}
     </div>
   );

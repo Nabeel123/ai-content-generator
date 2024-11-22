@@ -1,3 +1,4 @@
+import { UserButton } from "@clerk/nextjs";
 import { Search } from "lucide-react";
 import React from "react";
 
@@ -11,6 +12,7 @@ export const Header = () => {
       <div className="bg-purple-500 p-1 rounded-full text-xs text-white px-2">
         <h2> 🔥 Join membership just for $9.99</h2>
       </div>
+      <UserButton />
     </div>
   );
 };

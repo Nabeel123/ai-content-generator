@@ -23,11 +23,6 @@ const SideNav = () => {
       path: "/dashboard/billing",
       icon: WalletCards,
     },
-    {
-      name: "Setting",
-      path: "/dashboard/setting",
-      icon: Settings,
-    },
   ];
 
   const path = usePathname();
