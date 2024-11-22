@@ -24,7 +24,9 @@ async function History() {
   const HistoryList: any = await db
     .select()
     .from(AIOutput)
-    .where(eq(AIOutput?.createdBy, user?.primaryEmailAddress?.emailAddress))
+    .where(
+      eq(AIOutput.createdBy, user?.primaryEmailAddress?.emailAddress || "")
+    )
     .orderBy(desc(AIOutput.id));
 
   // Helper function to fetch the template name and icon
