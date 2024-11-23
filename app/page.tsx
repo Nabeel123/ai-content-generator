@@ -49,7 +49,7 @@ export default function Home() {
           <div className="flex justify-center">
             <a
               className="inline-flex items-center gap-x-2 bg-white border border-gray-200 text-sm text-gray-800 p-1 ps-3 rounded-full transition hover:border-gray-300 dark:bg-neutral-800 dark:border-neutral-700 dark:hover:border-neutral-600 dark:text-neutral-200"
-              href="https://github.com/shohail-DeV/Creator-AI"
+              href="https://github.com/Nabeel123"
               target="_blank"
             >
               CreatorAI Membership - Join Now
